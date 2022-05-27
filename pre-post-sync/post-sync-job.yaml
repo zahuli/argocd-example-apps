@@ -16,7 +16,7 @@ spec:
             - -c
             - |
               sleep 10
-              curl -X POST -H 'Content-type: application/json' --data '{"text":"Post sync is done!"}' https://hooks.slack.com/services/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
+              curl -X POST -H 'Content-type: application/json' --data '{"text":"Post sync is done!"}' https://hooks.slack.com/services/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
 
       restartPolicy: Never
   backoffLimit: 0
