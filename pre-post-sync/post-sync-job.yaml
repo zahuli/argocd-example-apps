@@ -9,8 +9,14 @@ spec:
   template:
     spec:
       containers:
-      - name: sleep
-        image: alpine:latest
-        command: ["sleep", "10"]
+        - name: sleep
+          image: alpine:latest
+          command:
+            - /bin/bash
+            - -c
+            - |
+              sleep 10
+              curl -X POST -H 'Content-type: application/json' --data '{"text":"Post sync is done!"}' https://hooks.slack.com/services/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
+
       restartPolicy: Never
   backoffLimit: 0
