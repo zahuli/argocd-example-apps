@@ -11,6 +11,9 @@ spec:
       containers:
         - name: sleep
           image: bitnami/kubectl:1.17.3
-          command: ["sleep", "10"]
+          command:
+            - "bin/bash"
+            - "-c"
+            - "kubectl get pods"
       restartPolicy: Never
   backoffLimit: 0
