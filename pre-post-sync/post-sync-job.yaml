@@ -10,7 +10,7 @@ spec:
     spec:
       containers:
         - name: sleep
-          image: kubectl:latest
+          image: bitnami/kubectl:1.17.3
           command: ["sleep", "10"]
       restartPolicy: Never
   backoffLimit: 0
