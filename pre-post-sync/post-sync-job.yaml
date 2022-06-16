@@ -16,5 +16,6 @@ spec:
             - "bin/bash"
             - "-c"
             - "kubectl get pods"
+            - "sleep 60"
       restartPolicy: Never
   backoffLimit: 0
