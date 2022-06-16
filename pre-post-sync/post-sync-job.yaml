@@ -8,6 +8,7 @@ metadata:
 spec:
   template:
     spec:
+      serviceAccount: internal-kubectl
       containers:
         - name: test
           image: bitnami/kubectl
