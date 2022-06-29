@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: internal-kubectl
+  namespace: default
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: check-pods
+  namespace: default
+rules:
+  - apiGroups: [""]
+    resources:
+      - pods
+    verbs:
+      - get
+      - watch
+      - list
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: check-pods-to-sa
+  namespace: default
+subjects:
+  - kind: ServiceAccount
+    name: internal-kubectl
+roleRef:
+  kind: Role
+  name: check-pods
+  apiGroup: rbac.authorization.k8s.io
