@@ -8,14 +8,9 @@ metadata:
 spec:
   template:
     spec:
-      serviceAccount: internal-kubectl
       containers:
-        - name: test
-          image: bitnami/kubectl
-          command:
-            - "bin/bash"
-            - "-c"
-            - "kubectl get pods"
-            - "sleep 60"
+        - name: sleep
+          image: alpine:latest
+          command: ["sleep", "30"]
       restartPolicy: Never
   backoffLimit: 0
